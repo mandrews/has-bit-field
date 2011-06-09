@@ -4,6 +4,8 @@ module HasBitField
   # all following arguments should also be symbols,
   # which will be the name of each flag in the bit field
   def has_bit_field(bit_field_attribute, *args)
+    constant = bit_field_attribute.to_s.pluralize.upcase
+    const_set(constant, args).freeze
     args.each_with_index do |field,i|
       class_eval %{
         class << self

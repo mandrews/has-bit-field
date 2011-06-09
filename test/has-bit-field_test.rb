@@ -206,4 +206,10 @@ class HasBitFieldTest < Test::Unit::TestCase
     assert s.save
   end
 
+  def test_defines_constant
+    assert_equal Person::BIT_FIELDS, [:likes_ice_cream, :plays_golf, :watches_tv, :reads_books]
+    assert_equal Skill::INDOOR_BIT_FIELDS, [:plays_piano, :mops_floors, :makes_soup]
+    assert_equal Skill::OUTDOOR_BIT_FIELDS, [:chops_trees, :builds_fences, :cuts_hedges]
+  end
+
 end
