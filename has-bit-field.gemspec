@@ -3,12 +3,12 @@ $:.push File.expand_path("../lib", __FILE__)
 require "has-bit-field/version"
 
 Gem::Specification.new do |s|
-  s.name        = "has-bit-field"
+  s.name        = "mandrews-has-bit-field"
   s.version     = Has::Bit::Field::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Paul Barry"]
+  s.authors     = ["Paul Barry", 'Michael Andrews']
   s.email       = ["mail@paulbarry.com"]
-  s.homepage    = "http://github.com/pjb3/has-bit-field"
+  s.homepage    = "http://github.com/mandrews/has-bit-field"
   s.summary     = "Provides an easy way to work with bit fields in active record"
   s.description = "Provides an easy way to work with bit fields in active record"
 
