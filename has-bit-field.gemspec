@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = "Provides an easy way to work with bit fields in active record"
   s.description = "Provides an easy way to work with bit fields in active record"
 
-  s.rubyforge_project = "has-bit-field"
+  s.rubyforge_project = "mandrews-has-bit-field"
   s.add_development_dependency "sqlite3-ruby"
   s.add_development_dependency "activerecord", "~> 2.3.5"
 
