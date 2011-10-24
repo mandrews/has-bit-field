@@ -36,16 +36,16 @@ module HasBitField
           #{field} != #{field}_was
         end
       }
-      if(respond_to?(:named_scope))
+      if(respond_to?(:scope))
         if table_exists? && columns_hash.has_key?(bit_field_attribute.to_s) && columns_hash[bit_field_attribute.to_s].null
           class_eval %{
-            named_scope :#{field}, :conditions => ["#{table_name}.#{bit_field_attribute} IS NOT NULL AND (#{table_name}.#{bit_field_attribute} & ?) != 0", #{field}_bit]
-            named_scope :not_#{field}, :conditions => ["#{table_name}.#{bit_field_attribute} IS NULL OR (#{table_name}.#{bit_field_attribute} & ?) = 0", #{field}_bit]          
+            scope :#{field}, where("#{table_name}.#{bit_field_attribute} IS NOT NULL AND (#{table_name}.#{bit_field_attribute} & ?) != 0", #{field}_bit)
+            scope :not_#{field}, where("#{table_name}.#{bit_field_attribute} IS NULL OR (#{table_name}.#{bit_field_attribute} & ?) = 0", #{field}_bit)
           }
         else
           class_eval %{
-            named_scope :#{field}, :conditions => ["(#{table_name}.#{bit_field_attribute} & ?) != 0", #{field}_bit]
-            named_scope :not_#{field}, :conditions => ["(#{table_name}.#{bit_field_attribute} & ?) = 0", #{field}_bit]
+            scope :#{field}, where("(#{table_name}.#{bit_field_attribute} & ?) != 0", #{field}_bit)
+            scope :not_#{field}, where("(#{table_name}.#{bit_field_attribute} & ?) = 0", #{field}_bit)
           }
         end
       end
