@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mandrews-has-bit-field (1.1.2)
+    mandrews-has-bit-field (1.1.3)
 
 GEM
   remote: http://rubygems.org/
