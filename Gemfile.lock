@@ -29,7 +29,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord (~> 3.0)
+  activerecord (>= 3.0)
   mandrews-has-bit-field!
   rake
   sqlite3
